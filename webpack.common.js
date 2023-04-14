@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const public = path.resolve(__dirname, "public");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: "./src/index.tsx",
   output: {
     filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "build"),
@@ -26,6 +26,7 @@ module.exports = {
           },
         },
       },
+
 
       {
         test: /\.(tsx|ts)$/,
@@ -49,7 +50,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(), //cleans and rebuild build folder on every re run
     new HtmlWebpackPlugin({
-      template: "./public/index.html",
+      template: "public/index.html",
       filename: "./index.html",
     }),
   ],
