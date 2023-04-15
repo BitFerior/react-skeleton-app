@@ -9,7 +9,8 @@
   },
   "scripts": {
     "build": "webpack --config webpack.prod.js",
-    "start": "webpack-dev-server --hot --config webpack.dev.js",
+    "dev": "webpack-dev-server --hot --config webpack.dev.js --port 3000",
+    "start": "npm run build & serve -s build -p 3010",
     "test": "test"
   },
   "author": "",
