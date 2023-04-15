@@ -10,13 +10,12 @@ module.exports = merge(commonConfig, {
   mode: "development",
   devtool: "inline-source-map",
   devServer: {
-    port: 8080,
     open: true,
   },
 
   plugins: [
     ...commonConfig.plugins,
-    new HtmlWebpackPlugin({
+    new HtmlWebpackPlugin({        //simplifies the creation of html files. if any assets are changed this plugin auto makes changes in html files
       template: "public/index.html",
     }),
     new ErrorOverlayPlugin(), //it provides an overlay in the browser when there are compilation errors.
