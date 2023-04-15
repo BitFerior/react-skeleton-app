@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "A new react app without CRA",
   "main": "./src/index.tsx",
+  "engines": {
+    "node": "16.15.1",
+    "npm": "8.11.0"
+  },
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "start": "webpack-dev-server --hot --config webpack.dev.js",
