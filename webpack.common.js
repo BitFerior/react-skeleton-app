@@ -3,13 +3,14 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const public = path.resolve(__dirname, "public");
+const __publicdir = path.resolve(__dirname, "public");
+const __builddir = path.resolve(__dirname, "build");
 
 module.exports = {
   entry: "./src/index.tsx",
   output: {
     filename: "[name].[contenthash].js",
-    path: path.resolve(__dirname, "build"),
+    path: __builddir,
     publicPath: "/",
   },
 
@@ -27,7 +28,6 @@ module.exports = {
         },
       },
 
-
       {
         test: /\.(tsx|ts)$/,
         exclude: /node_modules/,
@@ -44,8 +44,8 @@ module.exports = {
   },
 
   resolve: {
-    extensions: [".*", ".js", ".jsx", ".ts", ".tsx"],
-    roots: [public],
+    extensions: [ ".js", ".jsx", ".ts", ".tsx"],
+    roots: [__publicdir],
   },
   plugins: [
     new CleanWebpackPlugin(), //cleans and rebuild build folder on every re run
