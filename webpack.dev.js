@@ -22,9 +22,7 @@ module.exports = merge(commonConfig, {
     new webpack.HotModuleReplacementPlugin(), //updates our code without reloading page
   ],
 
-  output: {
-    publicPath: "/",
-  },
+ 
   optimization: {
     usedExports: true,
   },
