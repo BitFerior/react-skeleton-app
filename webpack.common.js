@@ -1,5 +1,4 @@
 const path = require("path");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
@@ -48,7 +47,6 @@ module.exports = {
     roots: [__publicdir],
   },
   plugins: [
-    new CleanWebpackPlugin(), //cleans and rebuild build folder on every re run
     new HtmlWebpackPlugin({
       template: "public/index.html",
       filename: "./index.html",
