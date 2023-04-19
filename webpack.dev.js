@@ -1,29 +1,19 @@
 const { merge } = require("webpack-merge");
 const commonConfig = require("./webpack.common.js");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ErrorOverlayPlugin = require("error-overlay-webpack-plugin");
-const webpack = require("webpack");
+const DashboardPlugin = require("webpack-dashboard/plugin");
+
 
 const path = require("path");
 
 module.exports = merge(commonConfig, {
   mode: "development",
-  devtool: "inline-source-map",
+  devtool: "inline-source-map",  //  tells Webpack to include a source map as a data URI at the end of the JavaScript bundle file.
   devServer: {
     open: true,
   },
-
-  plugins: [
-    ...commonConfig.plugins,
-    new HtmlWebpackPlugin({        //simplifies the creation of html files. if any assets are changed this plugin auto makes changes in html files
-      template: "public/index.html",
-    }),
-    new ErrorOverlayPlugin(), //it provides an overlay in the browser when there are compilation errors.
-    new webpack.HotModuleReplacementPlugin(), //updates our code without reloading page
-  ],
-
- 
   optimization: {
-    usedExports: true,
+    usedExports: true,  // it analyze the only used exports in the project and avoids adding unused exports in the bundle
   },
+
+  plugins: [new DashboardPlugin()]
 });
