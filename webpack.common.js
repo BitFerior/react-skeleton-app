@@ -42,7 +42,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: [ ".js", ".jsx", ".ts", ".tsx"],
+    extensions: [ ".js", ".jsx", ".ts", ".tsx", ".css", ".scss", ".sass"],
     roots: [__publicdir],
   },
   plugins: [
