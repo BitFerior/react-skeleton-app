@@ -1,10 +1,5 @@
 const { merge } = require("webpack-merge");
 const commonConfig = require("./webpack.common.js");
-const DashboardPlugin = require("webpack-dashboard/plugin");
-
-
-const path = require("path");
-
 module.exports = merge(commonConfig, {
   mode: "development",
   devtool: "inline-source-map",  //  tells Webpack to include a source map as a data URI at the end of the JavaScript bundle file.
@@ -15,5 +10,4 @@ module.exports = merge(commonConfig, {
     usedExports: true,  // it analyze the only used exports in the project and avoids adding unused exports in the bundle
   },
 
-  plugins: [new DashboardPlugin()]
 });
