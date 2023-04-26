@@ -12,8 +12,9 @@ module.exports = {
     path: __builddir,
     publicPath: "/",
   },
-  performance: {   // this object disables different hints coming from webpack in form of warnings. webpack itself gives some hints to make ur app performance better
-    hints: false,
+
+  optimization: {
+    usedExports: true, // it analyze the only used exports in the project and avoids adding unused exports in the bundle
   },
 
   module: {
@@ -24,7 +25,7 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env"],  //includes all the necessary plugins to compile modern JavaScript syntax (ES6+) into compatible syntax with browser
+            presets: ["@babel/preset-env"], //includes all the necessary plugins to compile modern JavaScript syntax (ES6+) into compatible syntax with browser
           },
         },
       },
@@ -45,7 +46,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: [ ".js", ".jsx", ".ts", ".tsx", ".css", ".scss", ".sass"],
+    extensions: [".js", ".jsx", ".ts", ".tsx", ".css", ".scss", ".sass"],
     roots: [__publicdir],
   },
   plugins: [
@@ -55,8 +56,8 @@ module.exports = {
     }),
 
     new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css'
-  })
+      filename: "[name].css",
+      chunkFilename: "[id].css",
+    }),
   ],
 };
