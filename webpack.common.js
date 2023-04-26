@@ -12,11 +12,9 @@ module.exports = {
     path: __builddir,
     publicPath: "/",
   },
-
   optimization: {
     usedExports: true, // it analyze the only used exports in the project and avoids adding unused exports in the bundle
   },
-
   module: {
     rules: [
       {
@@ -29,7 +27,6 @@ module.exports = {
           },
         },
       },
-
       {
         test: /\.(tsx|ts)$/,
         exclude: /node_modules/,
@@ -37,14 +34,12 @@ module.exports = {
           loader: "ts-loader",
         },
       },
-
       {
         test: /\.(scss|css)$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
     ],
   },
-
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx", ".css", ".scss", ".sass"],
     roots: [__publicdir],
@@ -54,7 +49,6 @@ module.exports = {
       template: "public/index.html",
       filename: "./index.html",
     }),
-
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css",
