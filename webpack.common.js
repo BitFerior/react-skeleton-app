@@ -12,6 +12,9 @@ module.exports = {
     path: __builddir,
     publicPath: "/",
   },
+  performance: {   // this object disables different hints coming from webpack in form of warnings. webpack itself gives some hints to make ur app performance better
+    hints: false,
+  },
 
   module: {
     rules: [
