@@ -39,11 +39,11 @@
     "typescript": "^5.0.4",
     "webpack": "^5.68.0",
     "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.7.4",
-    "react-hot-loader": "^4.13.1"
+    "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-hot-loader": "^4.13.1"
   }
 }
