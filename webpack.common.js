@@ -23,7 +23,8 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env"], //includes all the necessary plugins to compile modern JavaScript syntax (ES6+) into compatible syntax with browser
+            presets: ["@babel/preset-env", "@babel/preset-react"],
+            plugins: ["react-hot-loader/babel"],
           },
         },
       },
