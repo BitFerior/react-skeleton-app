@@ -6,7 +6,7 @@ const __publicdir = path.resolve(__dirname, "public");
 const __builddir = path.resolve(__dirname, "build");
 
 module.exports = {
-  entry: "./src/index.tsx",
+  entry: ["react-hot-loader/patch", "./src/index.tsx"],
   output: {
     filename: "[name].[contenthash].js",
     path: __builddir,
