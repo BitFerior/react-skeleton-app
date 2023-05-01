@@ -3,7 +3,20 @@ const commonConfig = require("./webpack.common.js");
 module.exports = merge(commonConfig, {
   mode: "production",
   performance: {
-    // this object disables different hints coming from webpack in form of warnings. webpack itself gives some hints to make ur app performance better
     hints: false,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js|\.jsx$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env", "@babel/preset-react"],
+          },
+        },
+      },
+    ],
   },
 });

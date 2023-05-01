@@ -6,28 +6,17 @@ const __publicdir = path.resolve(__dirname, "public");
 const __builddir = path.resolve(__dirname, "build");
 
 module.exports = {
-  entry: ["react-hot-loader/patch", "./src/index.tsx"],
+  entry: ["./src/index.tsx"],
   output: {
     filename: "[name].[contenthash].js",
     path: __builddir,
     publicPath: "/",
   },
   optimization: {
-    usedExports: true, // it analyze the only used exports in the project and avoids adding unused exports in the bundle
+    usedExports: true,
   },
   module: {
     rules: [
-      {
-        test: /\.js|\.jsx$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env", "@babel/preset-react"],
-            plugins: ["react-hot-loader/babel"],
-          },
-        },
-      },
       {
         test: /\.(tsx|ts)$/,
         exclude: /node_modules/,

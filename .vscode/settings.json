@@ -30,5 +30,5 @@
   "search.exclude": {
     "**/build": true
   },
-  "cSpell.words": []
+  "cSpell.words": ["builddir", "publicdir"]
 }
